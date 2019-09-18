@@ -1,5 +1,5 @@
 "use strict";
-//-------类的实现-----------
+//-------1 类的实现-----------
 var Greeter = /** @class */ (function () {
     function Greeter(message) {
         this.greeting = message;

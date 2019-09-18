@@ -1,4 +1,4 @@
-//-------类的继承-----------
+//-------3 类的继承-----------
 class Animal2 { // 基类/超类
   name:string
   constructor(name:string){
@@ -13,9 +13,9 @@ class Snake extends Animal2 {
     constructor(name:string){ //派生类包含了一个构造函数，它 必须调用 super()，它会执行基类的构造函数
       super(name)
     }
-    move(distance:number = 5 ){  //重写了move方法
+    move(distance:number = 5 ){  
       console.log("snake move");
-      super.move(distance)
+      super.move(distance);//重写了move方法
     }
 }
 
@@ -23,9 +23,9 @@ class Horse extends Animal2 {
   constructor(name:string){
     super(name)
   }
-  move(distance:number = 45 ){ //重写了move方法
+  move(distance:number = 45 ){ 
     console.log("Horse move");
-    super.move(distance)
+    super.move(distance)//重写了move方法
   }
 }
 let snake1 = new Snake('ssss');

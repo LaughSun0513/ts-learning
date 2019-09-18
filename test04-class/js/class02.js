@@ -12,7 +12,7 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-//-------类的继承-----------
+//-------2 类的继承-----------
 var Animal = /** @class */ (function () {
     function Animal() {
     }

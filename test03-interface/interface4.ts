@@ -17,7 +17,7 @@ return newSquare
 }
 
 //let mySquare2 = createSquare2({ colour: 'red', width: 100 } );//colour拼写错误
-//---------1 可以跳过检查的方式之一 ----------
+//---------1 可以跳过检查的方式之一  as法----------
 //let mySquare3 = createSquare2({ colour: 'red', width: 100 } as SquareConfig); 
 
 //---------3 跳过方式三：将这个对象赋值给一个变量： 因为 squareOptions 不会经过额外属性检查，所以编译器不会报错--------

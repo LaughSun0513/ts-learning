@@ -13,10 +13,10 @@ let myStr:string = myArray[0];
 
 //-------使用数值型的字符串索引，有时会得到完全不同的Animal--------
 class Animal {
-  name:string
+  name!:string  //这里用 ！修饰符 来规避 Property 'name' has no initializer and is not definitely assigned in the constructor错误
 }
 class Dog extends Animal {
-  breed:string
+  breed!:string  //这里用 ！修饰符 来规避错误
 }
 interface NotOkay {
   //[x:number]:Animal, //数字索引类型“Animal”不能赋给字符串索引类型“Dog”

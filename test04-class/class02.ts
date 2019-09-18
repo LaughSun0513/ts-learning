@@ -1,4 +1,4 @@
-//-------类的继承-----------
+//-------2 类的继承-----------
 class Animal { //基类/ 超类
   move(distance:number = 0){
     console.log(`Animal moved ${distance}m`)

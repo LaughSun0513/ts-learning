@@ -1,4 +1,4 @@
-//-------类的实现-----------
+//-------1 类的实现-----------
 class Greeter {
   greeting:string
   constructor(message:string){
