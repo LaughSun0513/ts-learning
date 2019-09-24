@@ -12,4 +12,3 @@ let myGenericEcho2: <U>(args: U) => U = gengericEcho2;
 //还可以使用带有调用签名的对象字面量来定义泛型函数
 let myGenericEcho3: {<T>(args: T):T}  = gengericEcho2; //这里是:T 不是=>T
 
-//-----------泛型接口------------------

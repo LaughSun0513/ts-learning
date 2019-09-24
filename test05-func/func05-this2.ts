@@ -26,5 +26,5 @@ let deck3:Deck = {
     }
 }
 let cardPicker3 = deck3.createCardPicker()
-let pickedCard3 = cardPicker2(); 
+let pickedCard3 = cardPicker3(); 
 console.log('card: ' + pickedCard3.card + ' of ' + pickedCard3.suit)

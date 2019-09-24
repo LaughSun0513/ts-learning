@@ -22,7 +22,7 @@ class Bee extends Animal {
 
 class Lion extends Animal {
 }
-function createZoo(): Animal[] {
+function createZoo(): Animal[] { // Animal[]
     return [new Bee(), new Lion()]
 }
   
