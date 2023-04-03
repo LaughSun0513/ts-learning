@@ -102,7 +102,7 @@ interface myFunc {
 }
 //使用
 let createFunc:myFunc
-createFunc = function(string:string,subString:string):boolean{
+createFunc = function(string:string,subString:string):boolean {
     let result = string.search(subString); //'abc'.search('d') -> -1
     return result > -1
 }
@@ -440,8 +440,7 @@ let john = new Person4('John')
 //john.name = 'peter' //name 只读
 
 class Person5 {
-  constructor(readonly name: string) { //构造函数内直接使用
-  }
+  constructor(readonly name: string) {} //构造函数内直接使用
 }
 ```
 
@@ -916,7 +915,7 @@ myGenericStr.add = function (x, y) {
 }
 ```
 
-### 泛型约束
+### 泛型约束 <T extends xxx>
 ```TS
 //相比于操作 any 所有类型，我们想要限制函数去处理任意带有 .length 属性的所有类型。 
 //只要传入的类型有这个属性，我们就允许，就是说至少包含这一属性。为此，我们需要列出对于 T 的约束要求。
@@ -937,7 +936,7 @@ loggingIdentity({
 })
 ```
 
-### 在泛型约束中使用类型参数
+### 在泛型约束中使用类型参数<T,K extends keyof T>
 ```TS
 //可以声明一个类型参数，且它被另一个类型参数所约束
 //比如，现在我们想要用属性名从对象里获取这个属性。 并且我们想要确保这个属性存在于对象 obj 上，因此我们需要在这两个类型之间使用约束
@@ -1008,7 +1007,7 @@ let zoo3 = createZoo()
 ```
 
 # 高级类型
-### 交叉类型
+### 交叉类型 T & U
 ```TS
 //交叉类型是将多个类型合并为一个类型
 //可以把现有的多种类型叠加到一起成为一种类型，它包含了所需的所有类型的特性
@@ -1039,7 +1038,7 @@ let c = extend(a, b); // 让c同时拥有name和log
 c.name;
 c.log();
 ```
-### 联合类型
+### 联合类型 T | U
 ```TS
 function padLeft(value: string, padding: any) { //这里的padding为any
     if (typeof padding === 'number') {
@@ -1221,16 +1220,17 @@ class C {
     b?:number
 }
 let c1 = new C();
-c1.a =12;
+c1.a = 12;
 c1.a = undefined; //error, 'undefined' 不能赋值给 'number'
 
-c1.b=13
-c1.b=undefined;//ok
-c1.b=null;// error, 'null' 不能赋值给 'number | undefined'
+c1.b = 13
+c1.b = undefined;//ok
+c1.b = null;// error, 'null' 不能赋值给 'number | undefined'
 ```
 
 ### 类型保护和类型断言
 ```TS
+//-----------类型保护(||短路运算符)去除null---------------
 //由于可以为 null 的类型能和其它类型定义为联合类型，那么你需要使用类型保护来去除 null
 function f(sn: string | null): string {
     if (sn === null) {
@@ -1245,7 +1245,7 @@ function f2(sn: string | null): string {
 }
 ```
 ```TS
-//-----------类型断言去除null---------------
+//-----------类型断言(!.)去除null---------------
 function broken(name: string | null): string {
     function postfix(epithet: string) {
         //编译器无法去除嵌套函数的 null（除非是立即调用的函数表达式）
@@ -1277,13 +1277,16 @@ type Easing = 'ease-in' | 'ease-out' | 'ease-in-out'
 
 class UIEle {
     animate(dx:number,dy:number,easing:Easing){
-        if(easing==="ease-in"){
+        if (easing==="ease-in") {
 
-        }else if (easing==="ease-out") {
+        }
+      	else if (easing==="ease-out") {
             
-        }else if(easing==="ease-in-out"){
+        }
+      	else if (easing==="ease-in-out") {
 
-        }else{
+        } 
+      	else {
 
         }
     }

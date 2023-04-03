@@ -1,19 +1,19 @@
 //------额外属性检查如何跳过----------
 interface SquareConfig {
-  color?: string;
-  width?: number;
-  [propName:string]:any //2 可以跳过检查的方式之二，修改索引签名，表示可以有任意数量的属性，并且只要它们不是 color 和 width，那么就无所谓它们的类型是什么
+    color?: string;
+    width?: number;
+    [propName: string]: any //2 可以跳过检查的方式之二，修改索引签名，表示可以有任意数量的属性，并且只要它们不是 color 和 width，那么就无所谓它们的类型是什么
 }
 
-function createSquare2 (config: SquareConfig): { color: string; area: number } {
-let newSquare = {color: 'white', area: 100}
-if (config.color) {
-  newSquare.color = config.color
-}
-if (config.width) {
-  newSquare.area = config.width * config.width
-}
-return newSquare
+function createSquare2(config: SquareConfig): { color: string; area: number } {
+    let newSquare = { color: 'white', area: 100 }
+    if (config.color) {
+        newSquare.color = config.color
+    }
+    if (config.width) {
+        newSquare.area = config.width * config.width
+    }
+    return newSquare
 }
 
 //let mySquare2 = createSquare2({ colour: 'red', width: 100 } );//colour拼写错误
